@@ -28,13 +28,12 @@ const List = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px 0;
-    textarea {
+    div {
       border: none;
       border-bottom: 1px dotted rgba(40,44,52,0.5) ;
       box-sizing: border-box;
       padding: 2% 5%;
       overflow: hidden;
-      resize: none;
       width: 90%;
       margin: 0 auto;
       &:last-child {
@@ -55,9 +54,6 @@ class ToDo extends Component {
     //### React
     componentDidMount() {
         this.checkLocalTasks();
-        setTimeout(() => {
-            this.addAutoResize()
-        }, 10)
     }
 
 
@@ -105,15 +101,14 @@ class ToDo extends Component {
     renderTasks = () => {
         return (
             this.state.tasks.map((task, index) =>
-                <textarea value={task}
+                <div contenteditable="true"
                           key={index}
                           data-key={index}
                           onChange={(e)=>{
                               this.updateInputsArray(e);
-                              this.onInput(e)
+                              this.saveToLocalStorage(e)
                           }}
-                          onKeyUp={this.saveToLocalStorage}
-                />)
+                > {task}</div>)
 
         )
     };
@@ -129,23 +124,6 @@ class ToDo extends Component {
         }
     };
 
-    //### Style
-    addAutoResize = () => {
-        const tx = document.getElementsByTagName('textarea');
-        for (let i = 0; i < tx.length; i++) {
-            tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
-            tx[i].addEventListener("input", () => onInput, false);
-        }
-        const onInput = () => {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        };
-    };
-
-    onInput = (e) => {
-        e.target.style.height = 'auto';
-        e.target.style.height = (e.target.scrollHeight) + 'px';
-    };
 
     render() {
         const {date} = this.state;
