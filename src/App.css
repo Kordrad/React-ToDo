@@ -1,33 +1,20 @@
+/*@import url('https://fonts.googleapis.com/css?family=Lato');*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html, body, textarea {
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-image: linear-gradient(to right top, #1879d8, #00a6ef, #00cac7, #00e375, #dceb12);
+    background-size: cover;
+    min-height: 100vh;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    text-align: center;
 }
