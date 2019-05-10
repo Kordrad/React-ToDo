@@ -19,7 +19,6 @@ const Buttons = styled.div`
       border: none;
       box-sizing: border-box;
       padding: 2% 1%;
-      //background-color: #5a95ff;
       &:last-child {
         background-color: #ff5c5c;
       }
@@ -65,7 +64,7 @@ class ToDo extends Component {
     //### Online
     //If you have task saved on PC , this function load data
     checkLocalTasks = () => {
-        if (localStorage.getItem('tasks') === null) {
+        if ((localStorage.getItem('tasks') === null) || (localStorage.getItem('tasks').length === 0)) {
             this.setState({tasks: ['Click me to edit!']},
                 () => {
                     console.log(`You have ${this.state.tasks.length} tasks`)
