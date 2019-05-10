@@ -64,7 +64,7 @@ class ToDo extends Component {
     //### Online
     //If you have task saved on PC , this function load data
     checkLocalTasks = () => {
-        if ((localStorage.getItem('tasks') === null) || (localStorage.getItem('tasks').length === 0)) {
+        if ((localStorage.getItem('tasks') === null) || (JSON.parse(localStorage.getItem('tasks')).tasks.length === 0)) {
             this.setState({tasks: ['Click me to edit!']},
                 () => {
                     console.log(`You have ${this.state.tasks.length} tasks`)
