@@ -2,7 +2,7 @@ import React ,{ Component } from 'react';
 
 import './App.css';
 import ToDo from "./todo";
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const StyledApp = styled.div`
   padding: 75px 0;

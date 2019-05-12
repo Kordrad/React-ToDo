@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 const TodoStyle = styled.div`
   background-color: white;
@@ -15,12 +15,13 @@ const Buttons = styled.div`
    padding-top: 20px;
    width: 100%;
    & > button {
-      width: 33.333%;
+      width: 34%;
       border: none;
       box-sizing: border-box;
       padding: 2% 1%;
       &:last-child {
         background-color: #ff5c5c;
+        color: white;
       }
    }
 `;

@@ -8,11 +8,17 @@ html, body, textarea {
 }
 
 body {
-    background-image: linear-gradient(to right top, #1879d8, #00a6ef, #00cac7, #00e375, #dceb12);
+    /*background-image: linear-gradient(to right top, #1879d8, #00a6ef, #00cac7, #00e375, #dceb12);*/
+    background-image: linear-gradient(to right top, #051937, #0e2f66, #254598, #465acb, #6f6fff);
     background-size: cover;
     min-height: 100vh;
 }
 
 .App {
     text-align: center;
+}
+@media only screen and (min-width: 600px) {
+    button:hover{
+        filter: brightness(.75);
+    }
 }
